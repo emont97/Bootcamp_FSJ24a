@@ -95,6 +95,23 @@ export default function Characters() {
                     })
                 }
             </div>
+
+             {/** Nueva sección de favoritos */}
+             <h2>Personajes Favoritos</h2>
+            <div className={styles.container_card}>
+                {favorite.length === 0 ? (
+                    <p>Aun no hay personajes favoritos</p>
+                ) : (
+                    favorite.map((character) => (
+                        <div key={character.id} className={styles.card}>
+                            <img src={character.image} alt={character.name} />
+                            <h3>{character.name}</h3>
+                            <p>{character.ki <=0 ? <p>este guerrero no tiene ki</p> : character.ki }</p>
+                            <p><strong>Raza:</strong> {character.race}</p>
+                        </div>
+                    ))
+                )}
+            </div>
         </div>
     )
 }
